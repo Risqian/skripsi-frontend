@@ -78,25 +78,25 @@
       "_id": "asd1293uasdads1",
       "name": "Kebun Park",
       "type": "Nature",
-      "imageUrl": "/images/categoryItem1.png"
+      "imageUrl": "/images/treasure-1.jpg"
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Water land",
       "type": "Pool",
-      "imageUrl": "/images/categoryItem2.png"
+      "imageUrl": "/images/treasure-2.jpg"
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Kebun Park",
       "type": "Nature",
-      "imageUrl": "/images/categoryItem3.png"
+      "imageUrl": "/images/treasure-3.jpg"
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Water land",
       "type": "Pool",
-      "imageUrl": "/images/categoryItem4.png"
+      "imageUrl": "/images/treasure-4.jpg"
     }
   ],
   "categories": [

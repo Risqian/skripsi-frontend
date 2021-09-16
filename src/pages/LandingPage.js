@@ -16,6 +16,13 @@ export default class LandingPage extends Component {
         this.refMostPicked = React.createRef();
     }
 
+    componentDidMount() {
+        document.title = "Staycation | Home";
+        window.scrollTo(0, 0);
+
+        // if (!this.props.page.landingPage)
+        //     this.props.fetchPage(`/landing-page`, "landingPage");
+    }
 
     render() {
         return (
