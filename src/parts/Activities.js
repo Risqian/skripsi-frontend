@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import Button from "elements/Button";
 
 export default function Activities({ data }) {
-  // if (data.length === 0) return null;
+  if (data.length === 0) return null;
 
   return (
     <section className="container">
@@ -29,8 +29,8 @@ export default function Activities({ data }) {
                       <img
                         src={
                           item.imageUrl
-                          // ? `${process.env.REACT_APP_HOST}/${item.imageUrl}`
-                          // : ""
+                            ? `${process.env.REACT_APP_HOST}/${item.imageUrl}`
+                            : ""
                         }
                         alt={item.name}
                         className="img-cover"
