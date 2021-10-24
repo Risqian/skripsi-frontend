@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-auto" style={{ width: 350 }}>
             <IconText />
             <p className="brand-tagline">
-              We kaboom your beauty holiday instantly and memorable.
+              We kaboom your trick shoot comfortable and memorable.
             </p>
           </div>
           <div className="col-auto mr-5">
@@ -71,7 +71,7 @@ export default function Footer() {
                 </Button>
               </li>
               <li className="list-group-item">
-                <span>ShootFutsal, Kemang, Jakarta</span>
+                <span>ShootFutsal, Kebayoran Baru, Jakarta Selatan</span>
               </li>
             </ul>
           </div>

@@ -19,7 +19,7 @@ class LandingPage extends Component {
     }
 
     componentDidMount() {
-        document.title = "ShootFutsal | Home";
+        document.title = "ShootFutsal";
         window.scrollTo(0, 0);
 
         if (!this.props.page.landingPage)
