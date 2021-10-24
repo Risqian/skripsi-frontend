@@ -60,9 +60,9 @@ export default function Footer() {
                 <Button
                   isExternal
                   type="link"
-                  href="mailto:support@staycation.id"
+                  href="mailto:support@shootfutsal.id"
                 >
-                  support@staycation.id
+                  support@shootfutsal.id
                 </Button>
               </li>
               <li className="list-group-item">
@@ -71,14 +71,14 @@ export default function Footer() {
                 </Button>
               </li>
               <li className="list-group-item">
-                <span>Staycation, Kemang, Jakarta</span>
+                <span>ShootFutsal, Kemang, Jakarta</span>
               </li>
             </ul>
           </div>
         </div>
         <div className="row">
           <div className="col text-center copyrights">
-            Copyright 2019 • All rights reserved • Staycation
+            Copyright 2019 • All rights reserved • ShootFutsal
           </div>
         </div>
       </div>

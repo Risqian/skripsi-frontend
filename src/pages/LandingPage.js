@@ -9,6 +9,7 @@ import Testimony from "parts/Testimony";
 import Footer from "parts/Footer";
 
 import { fetchPage } from "store/actions/page";
+import landingPage from 'json/landingPage.json'
 
 class LandingPage extends Component {
 
@@ -18,7 +19,7 @@ class LandingPage extends Component {
     }
 
     componentDidMount() {
-        document.title = "Staycation | Home";
+        document.title = "ShootFutsal | Home";
         window.scrollTo(0, 0);
 
         if (!this.props.page.landingPage)
@@ -32,13 +33,17 @@ class LandingPage extends Component {
         return (
             <>
                 <Header {...this.props}></Header>
-                <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
+                {/* <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} /> */}
+                <Hero refMostPicked={this.refMostPicked} data={landingPage.hero} />
                 <MostPicked
                     refMostPicked={this.refMostPicked}
-                    data={page.landingPage.mostPicked}
+                    // data={page.landingPage.mostPicked}
+                    data={landingPage.mostPicked}
                 />
-                <Categories data={page.landingPage.category} />
-                <Testimony data={page.landingPage.testimonial} />
+                {/* <Categories data={page.landingPage.category} /> */}
+                <Categories data={landingPage.categories} />
+                {/* <Testimony data={page.landingPage.testimonial} /> */}
+                <Testimony data={landingPage.testimonial} />
                 <Footer />
             </>
         );

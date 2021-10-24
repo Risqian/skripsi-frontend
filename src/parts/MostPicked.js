@@ -2,6 +2,7 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 
 import Button from "elements/Button";
+import formatNumber from "utils/formatNumber";
 
 export default function MostPicked(props) {
   return (
@@ -18,15 +19,16 @@ export default function MostPicked(props) {
                 <Fade bottom delay={500 * index}>
                   <div className="card card-featured">
                     <div className="tag">
-                      ${item.price}
-                      <span className="font-weight-light">per {item.unit}</span>
+                      Rp {formatNumber(item.price)}
+                      <span className="font-weight-light"> per {item.unit}</span>
                     </div>
                     <figure className="img-wrapper">
                       <img
                         src={
-                          item.imageId[0]
-                            ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
-                            : ""
+                          // item.imageId[0]
+                          //   ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
+                          //   : ""
+                          item.imageUrl
                         }
                         alt={item.title}
                         className="img-cover"
@@ -41,7 +43,7 @@ export default function MostPicked(props) {
                         <h5>{item.title}</h5>
                       </Button>
                       <span>
-                        {item.city}, {item.country}
+                        {item.village}, {item.city}
                       </span>
                     </div>
                   </div>

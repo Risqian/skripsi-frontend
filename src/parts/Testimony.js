@@ -17,10 +17,11 @@ export default function Testimony({ data }) {
               style={{ margin: `30px 0 0 30px` }}
             >
               <img
-                src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`}
+                // src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`}
+                src={data.imageUrl}
                 alt="Testimonial"
                 className="position-absolute"
-                style={{ zIndex: 1 }}
+                style={{ zIndex: 1, borderRadius: "4%" }}
               />
               <img
                 src={TestimonyAccent}

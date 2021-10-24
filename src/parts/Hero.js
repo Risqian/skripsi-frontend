@@ -21,15 +21,15 @@ export default function Hero(props) {
                 <div className="row align-items-center">
                     <div className="col-auto pr-5" style={{ width: 530 }}>
                         <h1 className="font-weight-bold line-height-1 mb-3">
-                            Forget Busy Work, <br />
-                            Start Next Vacation
+                            Book Your Arena, <br />
+                            Shoot on Goal
                         </h1>
                         <p
                             className="mb-4 font-weight-light text-gray-500 w-75"
                             style={{ lineHeight: "170%" }}
                         >
-                            We provide what you need to enjoy your holiday with family. Time
-                            to make another memorable moments.
+                            We provide various types of futsal arenas to support games, and togetherness.
+                            Trick your opponent and score the winning goal.
                         </p>
                         <Button
                             className="btn px-5"
@@ -45,13 +45,13 @@ export default function Hero(props) {
                                 <img
                                     width="36"
                                     height="36"
-                                    src="/images/icon-traveler.svg"
-                                    alt={`${props.data.travelers} Travelers`}
+                                    src="/images/icon-player.png"
+                                    alt={`${props.data.players} Players`}
                                 />
                                 <h6 className="mt-3">
-                                    {formatNumber(props.data.travelers)}{" "}
+                                    {formatNumber(props.data.players)}{" "}
                                     <span className="text-gray-500 font-weight-light">
-                                        Travelers
+                                        Players
                                     </span>
                                 </h6>
                             </div>
@@ -59,13 +59,13 @@ export default function Hero(props) {
                                 <img
                                     width="36"
                                     height="36"
-                                    src="/images/icon-treasure.svg"
-                                    alt={`${props.data.treasures} Treasures`}
+                                    src="/images/icon-arena.png"
+                                    alt={`${props.data.arena} Arena`}
                                 />
                                 <h6 className="mt-3">
-                                    {formatNumber(props.data.treasures)}{" "}
+                                    {formatNumber(props.data.arena)}{" "}
                                     <span className="text-gray-500 font-weight-light">
-                                        Treasures
+                                        Arenas
                                     </span>
                                 </h6>
                             </div>
@@ -73,7 +73,7 @@ export default function Hero(props) {
                                 <img
                                     width="36"
                                     height="36"
-                                    src="/images/icon-cities.svg"
+                                    src="/images/icon-city.png"
                                     alt={`${props.data.cities} Cities`}
                                 />
                                 <h6 className="mt-3">
@@ -92,7 +92,7 @@ export default function Hero(props) {
                                 src={ImageHero}
                                 alt="Room with couches"
                                 className="img-fluid position-absolute"
-                                style={{ margin: "-30px 0 0 -30px", zIndex: 1 }}
+                                style={{ margin: "-30px 0 0 -30px", zIndex: 1, borderRadius: "4%" }}
                             />
                             <img
                                 src={ImageHero_}
