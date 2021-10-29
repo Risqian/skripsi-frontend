@@ -43,9 +43,8 @@ export default function Date(props) {
     focus.indexOf(1) < 0 && setIsShowed(false);
   };
 
-  const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${
-    value.endDate ? " - " + formatDate(value.endDate) : ""
-  }`;
+  const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${value.endDate ? " - " + formatDate(value.endDate) : ""
+    }`;
 
   return (
     <div

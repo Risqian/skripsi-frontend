@@ -5,6 +5,7 @@ import propTypes from "prop-types";
 
 import Button from "elements/Button";
 import { InputNumber, InputDate } from "elements/Form";
+import formatNumber from "utils/formatNumber";
 
 class BookingForm extends Component {
   constructor(props) {
@@ -64,34 +65,34 @@ class BookingForm extends Component {
     }
   }
 
-  startBooking = () => {
-    const { data } = this.state;
-    this.props.startBooking({
-      _id: this.props.itemDetails._id,
-      duration: data.duration,
-      date: {
-        startDate: data.date.startDate,
-        endDate: data.date.endDate,
-      },
-    });
-    this.props.history.push("/checkout");
-  };
+  // startBooking = () => {
+  //   const { data } = this.state;
+  //   this.props.startBooking({
+  //     _id: this.props.itemDetails._id,
+  //     duration: data.duration,
+  //     date: {
+  //       startDate: data.date.startDate,
+  //       endDate: data.date.endDate,
+  //     },
+  //   });
+  //   this.props.history.push("/checkout");
+  // };
 
   render() {
     const { data } = this.state;
-    const { itemDetails } = this.props;
+    const { itemDetails, startBooking } = this.props;
 
     return (
       <div className="card bordered" style={{ padding: "60px 80px" }}>
         <h4 className="mb-3">Start Booking</h4>
         <h5 className="h2 text-teal mb-4">
-          ${itemDetails.price}{" "}
+          Rp {formatNumber(itemDetails.price)}{" "}
           <span className="text-gray-500 font-weight-light">
             per {itemDetails.unit}
           </span>
         </h5>
 
-        <label htmlFor="duration">How long you will stay?</label>
+        <label htmlFor="duration">How long you will play?</label>
         <InputNumber
           max={30}
           suffix={" night"}
@@ -110,7 +111,7 @@ class BookingForm extends Component {
         >
           You will pay{" "}
           <span className="text-gray-900">
-            ${itemDetails.price * data.duration} USD
+            Rp {formatNumber(itemDetails.price * data.duration)}
           </span>{" "}
           per{" "}
           <span className="text-gray-900">
@@ -123,7 +124,8 @@ class BookingForm extends Component {
           hasShadow
           isPrimary
           isBlock
-          onClick={this.startBooking}
+          // onClick={this.startBooking}
+          onClick={startBooking}
         >
           Continue to Book
         </Button>

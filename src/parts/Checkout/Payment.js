@@ -2,6 +2,7 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 
 import { InputText, InputFile } from "elements/Form";
+import formatNumber from "utils/formatNumber";
 
 import logoBca from "assets/images/logo-bca.jpg";
 import logoMandiri from "assets/images/logo-mandiri.jpg";
@@ -21,8 +22,8 @@ export default function Payment(props) {
             <Fade delay={300}>
               <p className="mb-4">Transfer Pembayaran:</p>
               <p>Tax: {tax}%</p>
-              <p>Sub total: ${subTotal} USD</p>
-              <p>Total: ${grandTotal} USD</p>
+              <p>Sub total: Rp {formatNumber(subTotal)} </p>
+              <p>Total: Rp {formatNumber(grandTotal)} </p>
               <div className="row mt-4">
                 <div className="col-3 text-right">
                   <img src={logoBca} alt="bank central asia" width="60" />
@@ -31,7 +32,7 @@ export default function Payment(props) {
                   <dl>
                     <dd>Bank Central Asia</dd>
                     <dd>2208 1996</dd>
-                    <dd>BuildWith Angga</dd>
+                    <dd>ShootFutsal Dandi</dd>
                   </dl>
                 </div>
               </div>
@@ -44,7 +45,7 @@ export default function Payment(props) {
                   <dl>
                     <dd>Bank Mandiri</dd>
                     <dd>2208 1996</dd>
-                    <dd>BuildWith Angga</dd>
+                    <dd>ShootFutsal Dandi</dd>
                   </dl>
                 </div>
               </div>
