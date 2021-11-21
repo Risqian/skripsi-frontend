@@ -6,15 +6,14 @@ import Button from "elements/Button";
 export default function Categories({ data }) {
 
     return data.map((category, index1) => {
-        // if (category.itemId.length === 0) return null;
+        if (category.itemId.length === 0) return null;
 
         return (
             <section className="container" key={`category-${index1}`}>
                 <Fade bottom>
-                    <h4 className="mb-3 font-weight-medium">{category.title}</h4>
+                    <h4 className="mb-3 font-weight-medium">{category.name}</h4>
                     <div className="container-grid">
-                        {/* {category.itemId.map((item, index2) => { */}
-                        {category.items.map((item, index2) => {
+                        {category.itemId.map((item, index2) => {
                             return (
                                 <div
                                     className="item column-3 row-1"
@@ -31,10 +30,9 @@ export default function Categories({ data }) {
                                             <figure className="img-wrapper" style={{ height: 180 }}>
                                                 <img
                                                     src={
-                                                        // item.imageId[0]
-                                                        //     ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
-                                                        //     : ""
-                                                        item.imageUrl
+                                                        item.imageId[0]
+                                                            ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
+                                                            : ""
                                                     }
                                                     alt={item.title}
                                                     className="img-cover"

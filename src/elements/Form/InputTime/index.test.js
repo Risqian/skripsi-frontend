@@ -1,15 +1,16 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { screen } from "@testing-library/dom";
-import InputDate from "./index";
+import InputTime from "./index";
 
 class TestInput extends React.Component {
   state = {
-    value: {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
+    // value: {
+    //   startDate: new Date(),
+    //   endDate: new Date(),
+    //   key: "selection",
+    // },
+    value: null
   };
 
   handleChange = (e) => {
@@ -18,8 +19,8 @@ class TestInput extends React.Component {
 
   render() {
     return (
-      <InputDate
-        max={30}
+      <InputTime
+        // max={30}
         onChange={this.handleChange}
         name="value"
         value={this.state.value}
@@ -55,7 +56,7 @@ test("Should have tag <input> and has className .form-control", () => {
 test("Should show date picker when click input field", () => {
   const { container, input } = setup();
 
-  //   screen.debug();
+  screen.debug();
   fireEvent.click(input, { button: 1 });
   const datePickerWrapper = container.querySelector(`.date-range-wrapper`);
   //   screen.debug();

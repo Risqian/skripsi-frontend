@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import propTypes from "prop-types";
 
 import Button from "elements/Button";
-import { InputNumber, InputDate } from "elements/Form";
+import { InputNumber, InputDate, InputTime } from "elements/Form";
 import formatNumber from "utils/formatNumber";
 
 class BookingForm extends Component {
@@ -13,11 +13,12 @@ class BookingForm extends Component {
     this.state = {
       data: {
         duration: 1,
-        date: {
-          startDate: new Date(),
-          endDate: new Date(),
-          key: "selection",
-        },
+        // date: {
+        //   startDate: new Date(),
+        //   endDate: new Date(),
+        //   key: "selection",
+        // },
+        date: new Date()
       },
     };
   }
@@ -32,58 +33,59 @@ class BookingForm extends Component {
     });
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    const { data } = this.state;
-
-    if (prevState.data.date !== data.date) {
-      const startDate = new Date(data.date.startDate);
-      const endDate = new Date(data.date.endDate);
-      const countDuration = new Date(endDate - startDate).getDate();
-      this.setState({
-        data: {
-          ...this.state.data,
-          duration: countDuration,
-        },
-      });
-    }
-
-    if (prevState.data.duration !== data.duration) {
-      const startDate = new Date(data.date.startDate);
-      const endDate = new Date(
-        startDate.setDate(startDate.getDate() + +data.duration - 1)
-      );
-      this.setState({
-        ...this.state,
-        data: {
-          ...this.state.data,
-          date: {
-            ...this.state.data.date,
-            endDate: endDate,
-          },
-        },
-      });
-    }
-  }
-
-  // startBooking = () => {
+  // componentDidUpdate(prevProps, prevState) {
   //   const { data } = this.state;
-  //   this.props.startBooking({
-  //     _id: this.props.itemDetails._id,
-  //     duration: data.duration,
-  //     date: {
-  //       startDate: data.date.startDate,
-  //       endDate: data.date.endDate,
-  //     },
-  //   });
-  //   this.props.history.push("/checkout");
-  // };
+
+  //   if (prevState.data.date !== data.date) {
+  //     const startDate = new Date(data.date.startDate);
+  //     const endDate = new Date(data.date.endDate);
+  //     const countDuration = new Date(endDate - startDate).getDate();
+  //     this.setState({
+  //       data: {
+  //         ...this.state.data,
+  //         duration: countDuration,
+  //       },
+  //     });
+  //   }
+
+  //   if (prevState.data.duration !== data.duration) {
+  //     const startDate = new Date(data.date.startDate);
+  //     const endDate = new Date(
+  //       startDate.setDate(startDate.getDate() + +data.duration - 1)
+  //     );
+  //     this.setState({
+  //       ...this.state,
+  //       data: {
+  //         ...this.state.data,
+  //         date: {
+  //           ...this.state.data.date,
+  //           endDate: endDate,
+  //         },
+  //       },
+  //     });
+  //   }
+  // }
+
+  startBooking = () => {
+    const { data } = this.state;
+    this.props.startBooking({
+      _id: this.props.itemDetails._id,
+      duration: data.duration,
+      // date: {
+      //   startDate: data.date.startDate,
+      //   endDate: data.date.endDate,
+      // },
+      date: data.date
+    });
+    this.props.history.push("/checkout");
+  };
 
   render() {
     const { data } = this.state;
     const { itemDetails, startBooking } = this.props;
 
     return (
-      <div className="card bordered" style={{ padding: "60px 80px" }}>
+      <div className="card bordered" style={{ padding: "60px 50px" }}>
         <h4 className="mb-3">Start Booking</h4>
         <h5 className="h2 text-teal mb-4">
           Rp {formatNumber(itemDetails.price)}{" "}
@@ -95,7 +97,7 @@ class BookingForm extends Component {
         <label htmlFor="duration">How long you will play?</label>
         <InputNumber
           max={30}
-          suffix={" night"}
+          suffix={" hour"}
           isSuffixPlural
           onChange={this.updateData}
           name="duration"
@@ -103,8 +105,12 @@ class BookingForm extends Component {
         />
 
         <label htmlFor="date">Pick a date</label>
-        <InputDate onChange={this.updateData} name="date" value={data.date} />
-
+        {/* <InputDate onChange={this.updateData} name="date" value={data.date} /> */}
+        <InputTime
+          onChange={this.updateData}
+          name="date"
+          value={data.date}
+        />
         <h6
           className="text-gray-500 font-weight-light"
           style={{ marginBottom: 40 }}
@@ -124,8 +130,8 @@ class BookingForm extends Component {
           hasShadow
           isPrimary
           isBlock
-          // onClick={this.startBooking}
-          onClick={startBooking}
+          onClick={this.startBooking}
+        // onClick={startBooking}
         >
           Continue to Book
         </Button>

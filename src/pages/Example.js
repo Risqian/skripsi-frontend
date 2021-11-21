@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import InputDate from "elements/Form/InputDate";
+// import InputDate from "elements/Form/InputDate";
 import InputTime from "elements/Form/InputTime";
 import Breadcrumb from "elements/Breadcrumb";
-import moment from 'moment';
+// import moment from 'moment';
 export default class Example extends Component {
   state = {
-    value: {
-      // startDate: new Date(),
-      // endDate: new Date(),
-      // key: "selection"
-      startTime: moment(),
-      endTime: moment(),
-      key: "selection"
-    }
-    // value: ""
+    // value: {
+    //   startDate: new Date(),
+    //   endDate: new Date(),
+    //   key: "selection"
+    // }
+    value: new Date()
   };
 
   returnFunctionStart = event => {
@@ -33,7 +30,7 @@ export default class Example extends Component {
       { pageTitle: "Web", pageHref: "" },
       { pageTitle: "Dandi", pageHref: "" }
     ];
-    console.log(this.state);
+
     return (
       <div className="container">
         <div
@@ -50,8 +47,6 @@ export default class Example extends Component {
             /> */}
             <InputTime
               onChange={this.handleChange}
-              onStartTimeChange={this.returnFunctionStart}
-              onEndTimeChange={this.returnFunctionEnd}
               name="value"
               value={this.state.value}
             />
