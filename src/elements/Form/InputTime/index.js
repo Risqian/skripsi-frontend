@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import propTypes from "prop-types";
 
 import DatePicker from "react-datepicker";
