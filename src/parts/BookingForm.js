@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import propTypes from "prop-types";
 
 import Button from "elements/Button";
-import { InputNumber, InputDate, InputTime } from "elements/Form";
+import { InputNumber, InputTime } from "elements/Form";
 import formatNumber from "utils/formatNumber";
 
 class BookingForm extends Component {
@@ -82,7 +82,7 @@ class BookingForm extends Component {
 
   render() {
     const { data } = this.state;
-    const { itemDetails, startBooking } = this.props;
+    const { itemDetails } = this.props;
 
     return (
       <div className="card bordered" style={{ padding: "60px 50px" }}>
@@ -131,7 +131,6 @@ class BookingForm extends Component {
           isPrimary
           isBlock
           onClick={this.startBooking}
-        // onClick={startBooking}
         >
           Continue to Book
         </Button>

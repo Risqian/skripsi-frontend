@@ -6,23 +6,11 @@ import DatePicker from "react-datepicker";
 import "./index.scss";
 import "react-datepicker/dist/react-datepicker.css";
 
-import formatDate from "utils/formatDate";
 import iconCalendar from "assets/images/icons/icon-calendar.svg";
 
 
 export default function Time(props) {
-  const { value, placeholder, name } = props;
-  const [isShowed, setIsShowed] = useState(false);
-
-  const [startDate, setStartDate] = useState(
-    new Date()
-    // setHours(setMinutes(new Date(), 30), 16)
-  );
-
-  const dateChange = (date) => {
-    setStartDate(date)
-  }
-
+  const { value, name } = props;
   const datePickerChange = (value) => {
     const target = {
       target: {
@@ -33,20 +21,7 @@ export default function Time(props) {
     props.onChange(target);
   };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  });
-
   const refDate = useRef(null);
-  const handleClickOutside = (event) => {
-    if (refDate && !refDate.current.contains(event.target)) {
-      setIsShowed(false);
-    }
-  };
 
   return (
     <div
