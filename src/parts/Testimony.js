@@ -20,7 +20,7 @@ export default function Testimony({ data }) {
                 src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`}
                 alt="Testimonial"
                 className="position-absolute"
-                style={{ zIndex: 1, borderRadius: "4%" }}
+                style={{ zIndex: 1, borderRadius: "4%", objectFit: 'cover' }}
               />
               <img
                 src={TestimonyAccent}
