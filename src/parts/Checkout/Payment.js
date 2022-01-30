@@ -4,9 +4,6 @@ import Fade from "react-reveal/Fade";
 import { InputText, InputFile } from "elements/Form";
 import formatNumber from "utils/formatNumber";
 
-import logoBca from "assets/images/logo-bca.jpg";
-import logoMandiri from "assets/images/logo-mandiri.jpg";
-
 export default function Payment(props) {
   const { data, ItemDetails, checkout } = props;
 
@@ -24,31 +21,26 @@ export default function Payment(props) {
               <p>Tax: {tax}%</p>
               <p>Sub total: Rp {formatNumber(subTotal)} </p>
               <p>Total: Rp {formatNumber(grandTotal)} </p>
-              <div className="row mt-4">
-                <div className="col-3 text-right">
-                  <img src={logoBca} alt="bank central asia" width="60" />
-                </div>
-                <div className="col">
-                  <dl>
-                    <dd>Bank Central Asia</dd>
-                    <dd>2208 1996</dd>
-                    <dd>ShootFutsal Dandi</dd>
-                  </dl>
-                </div>
-              </div>
+              {ItemDetails.bank.length === 0
+                ? "Tidak Ada Feature"
+                : ItemDetails.bank.map((item, index) => {
+                  return (
+                    <div className="row mt-4">
+                      <div className="col-3 text-right">
+                        <img src={item.imageUrl} alt={item._id} width="60" />
+                      </div>
+                      <div className="col">
+                        <dl>
+                          <dd>{item.nameBank}</dd>
+                          <dd>{item.nomorRekening}</dd>
+                          <dd>{item.name}</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  );
+                })
+              }
 
-              <div className="row">
-                <div className="col-3 text-right">
-                  <img src={logoMandiri} alt="mandiri" width="60" />
-                </div>
-                <div className="col">
-                  <dl>
-                    <dd>Bank Mandiri</dd>
-                    <dd>2208 1996</dd>
-                    <dd>ShootFutsal Dandi</dd>
-                  </dl>
-                </div>
-              </div>
             </Fade>
           </div>
           <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
