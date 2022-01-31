@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 
 import Button from "elements/Button";
 
-export default function Categories({ data }) {
+export default function Categories({ data, search }) {
 
-    return data.map((category, index1) => {
+    const [newData, setNewData] = useState([])
+
+    useEffect(() => {
+        setNewData(data)
+    }, [data])
+
+    useEffect(() => {
+        if (search.length != 0) {
+            var PATTERN = new RegExp(search),
+                filtered = data.filter(function (str) { return PATTERN.test(str.itemId.map(a => a.title.toLowerCase())); });
+            setNewData(filtered)
+        } else {
+            setNewData(data)
+        }
+    }, [search])
+    console.log("newData : ", newData)
+
+    return newData.map((category, index1) => {
         if (category.itemId.length === 0) return null;
 
         return (

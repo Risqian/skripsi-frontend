@@ -21,8 +21,7 @@ export default function Hero(props) {
                 <div className="row align-items-center">
                     <div className="col-auto pr-5" style={{ width: 530 }}>
                         <h1 className="font-weight-bold line-height-1 mb-3">
-                            Book Your Arena, <br />
-                            Shoot on Goal
+                            Book Your Arena, Shoot on Goal
                         </h1>
                         <p
                             className="mb-4 font-weight-light text-gray-500 w-75"
