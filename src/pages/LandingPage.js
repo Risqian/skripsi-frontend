@@ -46,7 +46,7 @@ class LandingPage extends Component {
             <>
                 <Header {...this.props}></Header>
                 <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
-                <div className="col-5 py-5" style={{ paddingLeft: 40 }}>
+                {/* <div className="col-5 py-5" style={{ paddingLeft: 40 }}>
                     <label htmlFor="firstName">Search Data</label>
                     <InputText
                         id="searchData"
@@ -55,7 +55,7 @@ class LandingPage extends Component {
                         onChange={this.onChange}
                     />
                     {this.state.searchData}
-                </div>
+                </div> */}
                 <MostPicked
                     refMostPicked={this.refMostPicked}
                     data={page.landingPage.mostPicked}
